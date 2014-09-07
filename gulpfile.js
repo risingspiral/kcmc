@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 gulp.task('clean', function (cb) {
     require('rimraf')('dist', cb);
@@ -84,8 +85,9 @@ gulp.task('connect', function () {
 });
 
 gulp.task('test', function () {
-    return gulp.src('test/index.html', {read: false})
-        .pipe(mocha({reporter: 'html'}));
+    return gulp
+        .src('app/test/index.html')
+        .pipe(mochaPhantomJS());
 });
 
 gulp.task('serve', ['connect'], function () {

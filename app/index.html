@@ -35,14 +35,20 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/traceur/traceur.js"></script>
-    <script src="bower_components/es6-module-loader/dist/es6-module-loader.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script>
+        window.exports = {};
+    </script>
+
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/app.js"></script>
     <!-- endbuild -->
+
+    <script>
+        new window.exports['App'];
+    </script>
 
 </body>
 </html>
