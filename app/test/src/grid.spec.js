@@ -4,8 +4,8 @@ describe('A grid', function() {
     var albums;
 
     var columnDefs = {
-        'title' : {'label': 'Album Title'},
-        'group' : {'label': 'Artist Name'}
+        'title' : {'id': 'title', 'label': 'Album Title'},
+        'group' : {'id': 'group', 'label': 'Artist Name'}
     };
 
     beforeEach(function() {
@@ -46,12 +46,17 @@ describe('A grid', function() {
         grid.populate(albums.slice(0,2));
         assert.include(grid.get$().html(), albums[0].title, 'The first album title is missing from the grid.');
 
-        grid.setColumns(columnDefs);
         grid.populate(albums.slice(2,4));
         assert.notInclude(grid.get$().html(), albums[0].title, 'The first album is still present in the grid.');
     });
 
-    it('can be sorted', function(){
-        assert.ok(false);
+    it('can sort a field', function(){
+        grid.setColumns(columnDefs);
+        grid.populate(albums.slice(0,2));
+        grid.sort('title', 'desc');
+        assert.include(grid.get$().find('tr td').first().html(), albums[1].title);
+
+        grid.sort('title');
+        assert.include(grid.get$().find('tr td').first().html(), albums[0].title);
     });
 });
