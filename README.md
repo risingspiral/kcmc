@@ -2,15 +2,17 @@ Basic music catalog application
 
 INSTALLATION
 
-1) Clone the repo
+1) Clone the repo, cd into it.
 
 2) Run `npm update`
 
 3) Run `npm install -g bower`
 
-4) Run `bower update`
+4) Run `npm install -g gulp`
 
-5) Run `gulp serve` to start the application.
+5) Run `bower update`
+
+6) Run `gulp serve` to start the application.
 
 Additionally
 
