@@ -86,7 +86,7 @@ gulp.task('connect', function () {
 
 gulp.task('test', function () {
     return gulp
-        .src('app/test/index.html')
+        .src('app/test/*.html')
         .pipe(mochaPhantomJS());
 });
 
@@ -101,7 +101,8 @@ gulp.task('serve', ['connect'], function () {
         'app/*.html',
         'app/styles/**/*.css',
         'app/scripts/**/*.js',
-        'app/images/**/*'
+        'app/images/**/*',
+        'app/test/src/(.js'
     ]).on('change', livereload.changed);
     
     gulp.watch('bower.json', ['wiredep']);

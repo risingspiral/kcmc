@@ -1,5 +1,9 @@
-describe('Basic app', function() {
-    it('has an assertion', function() {
-        assert.ok(true, 'The assertion failed.');
+describe('Music catalog app', function() {
+    it('retrieves data', function() {
+        assert.ok(false);
+    });
+
+    it('associates personnel with albums', function() {
+        assert.ok(false);
     });
 });
